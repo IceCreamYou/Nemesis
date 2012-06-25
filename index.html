@@ -1,0 +1,121 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>Nemesis</title>
+  <meta name="description" content="A completely browser-based, HTML5 (WebGL) First-Person Shooter game. Originally built for AngelHack 2012 in 24 hours.">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">Nemesis</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">A completely browser-based, HTML5 (WebGL) First-Person Shooter game. Originally built for AngelHack 2012 in 24 hours.</p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/IceCreamYou/Nemesis/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/IceCreamYou/Nemesis/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/IceCreamYou/Nemesis" class="code">View Nemesis on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <p><a href="https://github.com/IceCreamYou/Nemesis">Nemesis</a> is a First Person Shooter tournament-style game created entirely in the browser using HTML5 Canvas/WebGL with no plugins in under 24 hours for AngelHack Silicon Valley 2012. It features everything you'd expect from a shooter:</p>
+
+<ul>
+<li>Run around, shoot, collide with things</li>
+<li>Enemies run around and shoot you</li>
+<li>Health tracking, score tracking, radar</li>
+<li>Pickups (extra health)</li>
+</ul><p>Built with the help of <a href="http://mrdoob.github.com/three.js/">Three.js</a> with no prior Three.js or WebGL experience.</p>
+
+<h3><a href="http://www.isaacsukin.com/sites/fps/index.html">Play it now!</a></h3>
+
+<p>WASD to move, mouse to look around, click to shoot. Hit F11 to go full screen. Mouse recommended.</p>
+
+<h3>The Story</h3>
+
+<p>On Saturday, June 23, 2012, I arrived at AngelHack with <a href="http://alexrattray.com/">Alex Rattray</a>. We intended to work together but had been unable to decide on a project we both liked. We saw people flying toy helicopters around and making them avoid obstacles and I decided right then that I was going to build something even cooler that would blow people's minds. I'd done some pretty serious tests with Canvas before but had never used WebGL (or even OpenGL) or coded 3D graphics before. On the other hand, as the co-leader of the <a href="http://cbp.beyondunreal.com/">Community Bonus Pack</a>, I've been involved in game development for years. Alex and I decided that we had different priorities and he ended up building <a href="http://acvte.org/">Acvte</a>, a blogging platform where you write and manage blog posts with Google Docs.</p>
+
+<p>Meanwhile, choosing <a href="http://mrdoob.github.com/three.js/">Three.js</a> as a starting point was pretty easy as it came with the recommendation of <a href="http://langworth.com/">Ian Langworth</a>, CTO and co-founder of <a href="https://artillerygames.com/">Artillery Games</a>. The problem is it has <a href="http://mrdoob.github.com/three.js/docs/latest/">very sparse documentation</a>. Luckily I'm no stranger to building on libraries with no documentation, so I approached it the same way I have before: by reading through a lot of <a href="https://github.com/mrdoob/three.js/tree/master/examples">other people's code</a> until it became clear what that code was doing. <a href="https://threejsdoc.appspot.com/doc/index.html">ThreeJSdoc</a> helped a lot with finding relevant examples.</p>
+
+<p>I started writing code at about 4:30pm on Saturday and finished at about 1pm on Sunday. Perhaps surprisingly, I wrote under 600 lines of JavaScript (it's all client-side) for the entire game. Three.js is pretty awesome. I did hit a few roadblocks but it mostly went pretty smoothly and I implemented basically everything I had wanted to. Here are some challenges I faced and the workarounds I used:</p>
+
+<ul>
+<li>Loading models turned out to be a pain, so I skipped that and went with the red angry-face cubes as enemies instead. This turned out to work pretty well for its purposes. Three.js does have support for loading models but it was eating up a lot of browser memory and I couldn't get the rotation right in the amount of time I had.</li>
+<li>Some of the controls were hard to wrangle, so I overrode THREE.FirstPersonControls and implemented some features myself to provide more of an FPS experience. Some compromises I made include not being able to look up or down and only being able to walk on flat surfaces (you couldn't go up or down a ramp for example, at least without more code)</li>
+<li>I used a pretty basic 2D-to-3D transformation to build the map</li>
+<li>The enemies move around mostly randomly instead of using <a href="https://github.com/qiao/PathFinding.js">PathFinding.js</a> like I originally wanted them to because I didn't have time to debug why some paths weren't being found</li>
+</ul><h3>The code</h3>
+
+<p>As you might expect for something written in 24 hours, it's a little messy, but it should still be readable. The original code is tagged with "AngelHack" in the repo; I'll clean it up and add explanation in-line when I get a chance. If you have experience with Three.js it should be pretty easy to understand, and if not, try asking about it on <a href="http://webchat.freenode.net/?channels=three.js">IRC</a> or <a href="http://stackoverflow.com/questions/tagged/three.js">StackOverflow</a>.</p>
+
+<h3>Future development</h3>
+
+<p>There's a lot that could still be done here:</p>
+
+<ul>
+<li>Allow looking up and down</li>
+<li>Pointer locking (some code for this is already written; unfortunately no stable-release major browsers support it yet)</li>
+<li>Allow jumping</li>
+<li>Allow walking up and down ramps/elevators/etc.</li>
+<li>Better collision (especially for the enemies)</li>
+<li>
+<a href="http://blog.artillerygames.com/2012/06/websocket-performance.html">Networking</a>, so you can play against other people online</li>
+<li>A level editor so you can play in multiple arenas (along with a way to choose a level)</li>
+<li>More weapons and pickups</li>
+<li>Better AI</li>
+</ul><p>I will probably keep working on the code sporadically, and I'll accept useful pull requests, but it would be awesome to see other people fork and improve the code.</p>
+
+<h3>About me</h3>
+
+<p>I'm <a href="http://www.isaacsukin.com/">Isaac Sukin</a>, sometimes known as <a href="https://twitter.com/IceCreamYou">IceCreamYou</a>. I'm an undergraduate student at the Wharton School at the University of Pennsylvania (class of 2014) and self-taught programmer since 2007. I've been involved in game development in <a href="http://cbp.beyondunreal.com/">one form or another</a> since 1999.</p>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/IceCreamYou" class="avatar"><img src="https://secure.gravatar.com/avatar/fc0c5b54b5338d46da4100b20f915b5e?s=30&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" width="48" height="48"/></a> <a href="https://github.com/IceCreamYou">IceCreamYou</a> maintains <a href="https://github.com/IceCreamYou/Nemesis">Nemesis</a></p>
+
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br/>theme by <a href="http://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/IceCreamYou/Nemesis/tarball/master" class="tar">tar</a><a href="https://github.com/IceCreamYou/Nemesis/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-32906556-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+</body>
+</html>
