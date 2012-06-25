@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WebGL FPS - AngelHack SV 2012 - Isaac Sukin</title>
+  <style>
+    body {
+      background-image: url('images/screenshot.jpg');
+      cursor: crosshair;
+      font-family: Georgia, Helvetica, sans-serif;
+      font-weight: bold;
+      margin: 0;
+      overflow: hidden;
+      padding: 0;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    #hud {
+      bottom: 10px;
+      position: absolute;
+      right: 10px;
+      z-index: 100;
+    }
+    #credits {
+      font-size: 12px;
+      position: absolute;
+      text-align: center;
+      top: 10px;
+      width: 100%;
+      z-index: 100;
+    }
+    p {
+      background-color: #EEEEEE;
+      border: 1px solid black;
+      display: inline-block;
+      margin: 0;
+      padding: 5px;
+    }
+    #radar {
+      background-color: #EEEEEE;
+      border: 1px solid black;
+      bottom: 10px;
+      left: 10px;
+      position: absolute;
+      z-index: 100;
+    }
+    #intro {
+      background-color: #000000;
+      color: #FFFFFF;
+      cursor: pointer;
+      font-size: 32px;
+      opacity: 0.7;
+      padding: 120px;
+      text-align: center;
+      z-index: 1001;
+    }
+    #hurt {
+      background-color: red;
+      display: none;
+      left: 0;
+      opacity: 0.15;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      z-index: 1002;
+    }
+  </style>
+  <script src="jquery-1.7.2.min.js"></script>
+  <!-- <script src="PointerLock.js"></script> --> <!-- Insufficient browser support, interferes with other mouse events -->
+  <!-- <script src="Pathfinder.js"></script> -->
+  <script src="Three.js"></script>
+  <!-- <script src="ColladaLoader.js"></script> -->
+  <script src="Three.FirstPersonControls.js"></script>
+  <script src="main.js"></script>
+</head>
+<body>
+</body>
+</html>
