@@ -1,0 +1,12 @@
+---------
+REMAINING
+---------
+record video
+
+
+--------
+UNSOLVED
+--------
+Allow looking up/down without amoving up/down
+Keep AI from spawning on top of each other or colliding
+Jumping
