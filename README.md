@@ -5,8 +5,7 @@ A completely browser-based, HTML5 (WebGL) First-Person Shooter game. Originally 
  - [Background and details](http://icecreamyou.github.com/Nemesis/)
  - [About the author](http://www.isaacsukin.com/)
 
-*Update, October 2013:* I wrote a book,
+**Update, October 2013:** I wrote a book,
 [Game Development with Three.js](http://www.packtpub.com/game-development-with-three-js/book),
-that goes into much more detail on the concepts discussed in this article
-and much more about how to build a fuller in-browser game.
+that explains in detail how to build a fuller in-browser game.
 Check it out if you'd like to learn more!
