@@ -9,3 +9,5 @@ A completely browser-based, HTML5 (WebGL) First-Person Shooter game. Originally 
 [Game Development with Three.js](http://www.packtpub.com/game-development-with-three-js/book),
 that explains in detail how to build a fuller in-browser game.
 Check it out if you'd like to learn more!
+
+**Update, February 2018:** This code is now licensed under the [GPL v3](https://tldrlegal.com/license/gnu-general-public-license-v3-(gpl-3)#fulltext).
